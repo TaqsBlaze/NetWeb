@@ -14,19 +14,15 @@ module.exports = (config) => {
 
     // Add blocked IPs to the matcher
     const matcher = new cidrMatcher(config.ipFiltering.blockedIps || []);
-    console.log(`BLOCKED IPs: ${JSON.stringify(config.ipFiltering.blockedIps)}`)
+
     // Optional: Create a separate matcher for allowed IPs
     const allowMatcher = config.allowedIPs ? new cidrMatcher(config.allowedIPs) : null;
 
     return (req, res, next) => {
         const clientIP = req.ip
-        console.log(typeof clientIP);
-        console.log(allowMatcher);
-        console.log(`<<<<<<< CLIENT IP >>>>>>>>> ${clientIP}`);
-        console.log(`<<<<<< Matcher >>>>>> ${JSON.stringify(matcher)}`)
+
         // Check allowed IPs first if defined
         if (allowMatcher && allowMatcher.contains(clientIP)) {
-            console.log(`Executed..`)
             return next(); // Explicitly allowed
         }
 
@@ -42,8 +38,8 @@ module.exports = (config) => {
                         body {
                             font-family: Arial, sans-serif;
                             text-align: center;
-                            background-color: #f8d7da;
-                            color: #721c24;
+                            background-color: #FFFFFFFF;
+                            color: #8B0210FF;
                             margin: 0;
                             padding: 0;
                             display: flex;
