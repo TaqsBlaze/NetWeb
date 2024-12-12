@@ -17,7 +17,7 @@
 To install **ReqWeb**, simply run the following command:
 
 ```bash
-npm install net-web
+npm install reqweb
 ```
 
 ## **Usage**
@@ -40,9 +40,13 @@ npm install net-web
    **ReqWeb** allows you to customize your configuration by loading a `userConfig.json` file. Here’s an example of how to load it:
 
    ```javascript
-   const config = configLoader('reqweb/src/config/defaultConfig.json'); //using default rules and configs
+   const config = configLoader('reqweb/src/config/usertConfig.json'); //user defined rules and configs
    ```
-
+   **Using default config**
+   ```javascript
+   const config = configLoader('reqweb/src/config/defaultConfig.json');
+   ```
+   
 3. **Apply the Middleware**:
    Add the IP filtering middleware to your Express app:
 

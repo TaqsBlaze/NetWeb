@@ -1,6 +1,6 @@
 {
   "name": "reqweb",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A powerful Web Application Firewall (WAF) for Node.js.",
   "main": "src/index.js",
   "exports": {
@@ -11,6 +11,10 @@
   },
   "directories": {
     "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taqsblaze/ReqWeb.git"
   },
   "scripts": {
     "build": "tsc",
@@ -25,6 +29,10 @@
   ],
   "author": "Tanaka Chinengundu",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taqsblaze/ReqWeb/issues"
+  },
+  "homepage": "https://github.com/taqsblaze/ReqWeb#readme",
   "dependencies": {
     "cidr-matcher": "^2.1.1",
     "express": "^4.21.2",
