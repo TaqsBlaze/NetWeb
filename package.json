@@ -1,29 +1,43 @@
 {
   "name": "net-web",
   "version": "1.0.0",
-  "description": "Web Application Firewall",
-  "main": "index.js",
+  "description": "A powerful Web Application Firewall (WAF) for Node.js.",
+  "main": "src/index.js",
+  "type": "module", 
+  "exports": {
+    ".": "./src/index.js",
+    "./src/middlewares/ipFilter": "./src/middlewares/ipFilter.js",  
+    "./src/config/configLoader": "./src/config/configLoader.js" 
+  },
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "bun --watch src/index.js"
+    "build": "tsc",
+    "test": "mocha tests/**/*.js"
   },
   "keywords": [
-    "WAF"
+    "WAF",
+    "Firewall",
+    "Node.js",
+    "Security",
+    "Access controll"
   ],
-  "author": "Tanaka CHinengundu",
+  "author": "Tanaka Chinengundu",
   "license": "ISC",
   "dependencies": {
     "cidr-matcher": "^2.1.1",
     "express": "^4.21.2",
-    "hotreloader": "^1.0.4",
     "nodemailer": "^6.9.16",
-    "watchdog": "^0.8.17",
+    "supertest": "^7.0.0",
     "winston": "^3.17.0"
   },
   "devDependencies": {
     "chai": "^5.1.2",
     "mocha": "^11.0.1"
-  }
+  },
+  "files": [
+    "src/",
+    "README.md"
+  ]
 }

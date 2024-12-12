@@ -29,8 +29,8 @@ npm install net-web
 
    ```javascript
    const express = require('express');
-   const configLoader = require('net-web').configLoader;
-   const ipFilter = require('net-web').ipFilter;
+   const configLoader = require('net-web');
+   const ipFilter = require('net-web');
    ```
 
 2. **Load Configuration**:
