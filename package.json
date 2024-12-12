@@ -1,13 +1,13 @@
 {
   "name": "reqweb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A powerful Web Application Firewall (WAF) for Node.js.",
   "main": "src/index.js",
-  "type": "module", 
   "exports": {
     ".": "./src/index.js",
     "./src/middlewares/ipFilter": "./src/middlewares/ipFilter.js",  
-    "./src/config/configLoader": "./src/config/configLoader.js" 
+    "./src/utils/configLoader": "./src/utils/configLoader.js",
+    "./src/middlewares/logger": "./src/middlewares/logger.js"
   },
   "directories": {
     "test": "tests"

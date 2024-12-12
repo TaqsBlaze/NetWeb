@@ -1,9 +1,9 @@
-![NetWeb Logo](https://raw.githubusercontent.com/TaqsBlaze/NetWeb/refs/heads/main/src/logo/logo.webp)
+![ReqWeb Logo](https://raw.githubusercontent.com/TaqsBlaze/ReqWeb/refs/heads/main/src/logo/logo.webp)
 ---
 
-# **NetWeb - Web Application Firewall (WAF)**
+# **ReqWeb - Web Application Firewall (WAF)**
 
-**NetWeb** is a lightweight and customizable **Web Application Firewall (WAF)** for Node.js. It provides IP-based filtering, request rate limiting, and logging, helping to protect your web applications from malicious traffic and unauthorized access.
+**ReqWeb** is a lightweight and customizable **Web Application Firewall (WAF)** for Node.js. It provides IP-based filtering, request rate limiting, and logging, helping to protect your web applications from malicious traffic and unauthorized access.
 
 ## **Features**
 - **IP Filtering**: Block or allow specific IPs or CIDR ranges.
@@ -14,7 +14,7 @@
 
 ## **Installation**
 
-To install **NetWeb**, simply run the following command:
+To install **ReqWeb**, simply run the following command:
 
 ```bash
 npm install net-web
@@ -25,19 +25,22 @@ npm install net-web
 ### Basic Setup with Express.js
 
 1. **Import the package**:
-   First, require **NetWeb** in your application:
+   First, require **ReqWeb** in your application:
 
    ```javascript
-   const express = require('express');
-   const configLoader = require('net-web');
-   const ipFilter = require('net-web');
+   
+    const express = require('express');
+    const ipFilter = require('reqweb/src/middlewares/ipFilter');
+    const ruleEngine = require('reqweb/src/middlewares/ruleEngine');
+    const logger = require('reqweb/src/middlewares/logger');
+
    ```
 
 2. **Load Configuration**:
-   **NetWeb** allows you to customize your configuration by loading a `userConfig.json` file. Here’s an example of how to load it:
+   **ReqWeb** allows you to customize your configuration by loading a `userConfig.json` file. Here’s an example of how to load it:
 
    ```javascript
-   const config = configLoader.loadConfig('./src/config/userConfig.json');
+   const config = configLoader('reqweb/src/config/defaultConfig.json'); //using default rules and configs
    ```
 
 3. **Apply the Middleware**:
@@ -71,7 +74,7 @@ In the `userConfig.json` file, you can define the list of blocked and allowed IP
 
 ### Customizing the Middleware
 
-You can modify or extend the behavior of **NetWeb** by tweaking the `ipFilter.js` middleware or adding your own custom rules.
+You can modify or extend the behavior of **ReqWeb** by tweaking the `ipFilter.js` middleware or adding your own custom rules.
 
 ---
 
@@ -87,7 +90,7 @@ You can modify or extend the behavior of **NetWeb** by tweaking the `ipFilter.js
   
 ### Example of rate-limiting setup:
 
-You can extend **NetWeb** to add rate-limiting by combining it with other libraries like **express-rate-limit**.
+You can extend **ReqWeb** to add rate-limiting by combining it with other libraries like **express-rate-limit**.
 
 ---
 
