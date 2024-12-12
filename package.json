@@ -1,5 +1,5 @@
 {
-  "name": "net-web",
+  "name": "netweb",
   "version": "1.0.0",
   "description": "A powerful Web Application Firewall (WAF) for Node.js.",
   "main": "src/index.js",
