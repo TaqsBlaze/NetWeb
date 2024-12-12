@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "node src/index.js"
+    "test": "bun --watch src/index.js"
   },
   "keywords": [
     "WAF"
@@ -17,7 +17,9 @@
   "dependencies": {
     "cidr-matcher": "^2.1.1",
     "express": "^4.21.2",
+    "hotreloader": "^1.0.4",
     "nodemailer": "^6.9.16",
+    "watchdog": "^0.8.17",
     "winston": "^3.17.0"
   },
   "devDependencies": {

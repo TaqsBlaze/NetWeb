@@ -28,6 +28,7 @@ function loadConfig() {
     config = getDefaultConfig();
   }
 
+  console.log(`LOADED CONFIGS: ${JSON.stringify(config)}`)
   return config;
 }
 
