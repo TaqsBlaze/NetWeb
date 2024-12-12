@@ -1,6 +1,6 @@
 {
   "name": "reqweb",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A powerful Web Application Firewall (WAF) for Node.js.",
   "main": "src/index.js",
   "exports": {
@@ -28,7 +28,7 @@
     "Access controll"
   ],
   "author": "Tanaka Chinengundu",
-  "license": "ISC",
+  "license": "Apache License 2.0",
   "bugs": {
     "url": "https://github.com/taqsblaze/ReqWeb/issues"
   },

@@ -1,0 +1,31 @@
+# Apache License 2.0
+
+**Copyright (c) 2024 Tanaka Chinengundu**
+
+Licensed under the Apache License, Version 2.0 (the "License");
+You may not use this file except in compliance with the License.
+You may obtain a copy of the License at:
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+---
+
+## Description of the Project:
+
+This project is a Web Application Firewall (WAF) Node.js package designed for modern security needs. It focuses on the following features:
+
+- **IP Filtering**: Block or allow requests based on IP addresses.
+- **Rate Limiting**: Control traffic to prevent abuse.
+- **Rule-Based Request Blocking**: Dynamically block requests based on custom rules.
+- **Logging and Alerting**: Provide detailed logging and alerting for suspicious activities.
+
+By using this package, developers can protect their web applications and services efficiently with customizable security rules and robust request handling mechanisms.
+
+For more information, contributions, or support, visit the project repository or contact Tanaka Chinengundu.
+
