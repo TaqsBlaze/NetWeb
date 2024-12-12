@@ -1,0 +1,27 @@
+{
+  "name": "net-web",
+  "version": "1.0.0",
+  "description": "Web Application Firewall",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node src/index.js"
+  },
+  "keywords": [
+    "WAF"
+  ],
+  "author": "Tanaka CHinengundu",
+  "license": "ISC",
+  "dependencies": {
+    "cidr-matcher": "^2.1.1",
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.16",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "chai": "^5.1.2",
+    "mocha": "^11.0.1"
+  }
+}
