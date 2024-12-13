@@ -40,21 +40,26 @@ npm install reqweb
    **ReqWeb** allows you to customize your configuration by loading a `userConfig.json` file. Here’s an example of how to load it:
 
    ```javascript
-   const config = configLoader('reqweb/src/config/usertConfig.json'); //user defined rules and configs
+   /*user defined rules and configs currently not implementet and
+   working on an interface for easy config*/
+   const config = configLoader('reqweb/src/config/usertConfig.json'); 
    ```
    **Using default config**
    ```javascript
    const config = configLoader('reqweb/src/config/defaultConfig.json');
    ```
    
-3. **Apply the Middleware**:
+3. **Apply the Middlewares**:
    Add the IP filtering middleware to your Express app:
 
    ```javascript
    const app = express();
 
-   // Apply IP filtering middleware
-   app.use(ipFilter(config));
+   // Apply WAF middlewares
+   app.use(logger(config));        // Logging middleware
+   app.use(ipFilter(config));     // IP filtering middleware
+   app.use(rateLimiter(config));  // Rate limiting middleware
+   app.use(ruleEngine(config));   // Rule-based request blocking
 
    app.get('/', (req, res) => {
        res.send('Welcome to Homelab!');
