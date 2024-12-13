@@ -1,6 +1,6 @@
 {
   "name": "reqweb",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A powerful Web Application Firewall (WAF) for Node.js.",
   "main": "src/index.js",
   "exports": {
