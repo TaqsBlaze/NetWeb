@@ -2,7 +2,7 @@
 
 const express = require('express');
 const ipFilter = require('./middlewares/ipFilter');
-//const rateLimiter = require('./middlewares/rateLimiter');
+const rateLimiter = require('./middlewares/rateLimiter');
 const ruleEngine = require('./middlewares/ruleEngine');
 const logger = require('./middlewares/logger');
 
@@ -20,7 +20,7 @@ app.use(express.json());
 // Apply WAF middlewares
 app.use(logger(config));        // Logging middleware
 app.use(ipFilter(config));     // IP filtering middleware
-//app.use(rateLimiter(config));  // Rate limiting middleware
+app.use(rateLimiter(config));  // Rate limiting middleware
 app.use(ruleEngine(config));   // Rule-based request blocking
 
 // Test route for the application

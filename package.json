@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "exports": {
     ".": "./src/index.js",
-    "./src/middlewares/ipFilter": "./src/middlewares/ipFilter.js",  
+    "./src/middlewares/ipFilter": "./src/middlewares/ipFilter.js",
     "./src/utils/configLoader": "./src/utils/configLoader.js",
     "./src/middlewares/logger": "./src/middlewares/logger.js"
   },
@@ -18,7 +18,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "mocha tests/**/*.js"
+    "test": "mocha tests/**/*.js",
+    "run": "bun --watch src/index.js"
   },
   "keywords": [
     "WAF",
@@ -36,6 +37,7 @@
   "dependencies": {
     "cidr-matcher": "^2.1.1",
     "express": "^4.21.2",
+    "express-rate-limit": "^7.4.1",
     "nodemailer": "^6.9.16",
     "supertest": "^7.0.0",
     "winston": "^3.17.0"
