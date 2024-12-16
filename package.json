@@ -1,6 +1,6 @@
 {
   "name": "reqweb",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "A powerful Web Application Firewall (WAF) for Node.js.",
   "main": "src/index.js",
   "exports": {
@@ -36,6 +36,7 @@
   },
   "homepage": "https://github.com/taqsblaze/ReqWeb#readme",
   "dependencies": {
+    "axios": "^1.7.9",
     "cidr-matcher": "^2.1.1",
     "express": "^4.21.2",
     "express-rate-limit": "^7.4.1",

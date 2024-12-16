@@ -1,52 +1,59 @@
 {
     "ipFiltering": {
-      "enabled": true,
-      "allowedIps": ["192.168.1.1/24", "10.0.0.2/8"],
-      "blockedIps": ["203.0.113.0/24", "198.51.100.1/24","0.0.0.0/8","172.0.0.1/8","192.168.1.105/24"],
-      "maxRequestsPerMinute": 80,
-      "banDuration": 3600
+        "enabled": true,
+        "allowedIps": [
+            "192.168.1.1/24",
+            "10.0.0.2/8"
+        ],
+        "blockedIps": [
+            "203.0.113.0/24",
+            "198.51.100.1/24",
+            "0.0.0.0/8",
+            "172.0.0.1/8",
+            "192.168.1.105/24"
+        ],
+        "maxRequestsPerMinute": 80,
+        "banDuration": 3600
     },
     "rateLimiting": {
-      "enabled": true,
-      "maxRequests": 1,
-      "timeWindow": 2600,
-      "banDuration": 10000
+        "enabled": true,
+        "maxRequests": 1,
+        "timeWindow": 2600,
+        "banDuration": 10000
     },
     "requestBlocking": {
-      "enabled": true,
-      "rules": [
-        {
-          "name": "Block SQL Injection",
-          "pattern": "(union.*select.*|select.*from.*information_schema.tables)",
-          "action": "block",
-          "method": "POST"
-        },
-        {
-          "name": "Block XSS Attack",
-          "pattern": "<script.*>.*</script>",
-          "action": "block",
-          "method": "GET"
-        }
-      ]
+        "enabled": true,
+        "rules": [
+            {
+                "name": "Block SQL Injection",
+                "pattern": "(union.*select.*|select.*from.*information_schema.tables)",
+                "action": "block",
+                "method": "POST"
+            },
+            {
+                "name": "Block XSS Attack",
+                "pattern": "<script.*>.*</script>",
+                "action": "block",
+                "method": "GET"
+            }
+        ]
     },
     "logging": {
-      "enabled": true,
-      "logLevel": "info",
-      "logFile": "waf_logs.json",
-      "logToFile": true,
-      "logToConsole": true
+        "enabled": true,
+        "logLevel": "info",
+        "logToFile": true,
+        "logToConsole": true
     },
     "alerting": {
-      "enabled": true,
-      "alertLevel": "high",
-      "email": "admin@example.com",
-      "sms": "+1234567890",
-      "alertThreshold": 5
+        "enabled": true,
+        "alertLevel": "high",
+        "email": "tanakah30@gmail.com.com",
+        "sms": "+263778040497",
+        "alertThreshold": 5
     },
     "general": {
-      "blockOnBreach": true,
-      "maxRequestSize": 1048576,
-      "requestTimeout": 5000
+        "blockOnBreach": true,
+        "maxRequestSize": 1048576,
+        "requestTimeout": 5000
     }
-  }
-  
+}

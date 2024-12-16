@@ -1,0 +1,43 @@
+{
+    "ipFiltering": {
+        "enabled": true,
+        "allowedIps": [
+            "192.168.1.1/24"
+        ],
+        "blockedIps": [
+            "10.192.168.0/24",
+            "192.168.2.0/24",
+            "71.111.123.1/24"
+        ],
+        "maxRequestsPerMinute": 5,
+        "banDuration": 60000
+    },
+    "rateLimiting": {
+        "enabled": true,
+        "maxRequests": 3,
+        "timeWindow": 5000,
+        "banDuration": 60000
+    },
+    "requestBlocking": {
+        "enabled": false,
+        "rules": []
+    },
+    "logging": {
+        "enabled": true,
+        "logLevel": "info",
+        "logToFile": true,
+        "logToConsole": false
+    },
+    "alerting": {
+        "enabled": false,
+        "alertLevel": "low",
+        "email": "",
+        "sms": "",
+        "alertThreshold": 0
+    },
+    "general": {
+        "blockOnBreach": true,
+        "maxRequestSize": 908661,
+        "requestTimeout": 80000
+    }
+}

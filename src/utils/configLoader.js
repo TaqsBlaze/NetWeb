@@ -65,8 +65,8 @@ function getDefaultConfig() {
     alerting: {
       enabled: true,
       alertLevel: 'high',
-      email: '',
-      sms: '',
+      email: 'tanakah30@gmail.com',
+      sms: '+263778040497',
       alertThreshold: 5
     },
     general: {
