@@ -1,43 +1,59 @@
 {
-    "ipFiltering": {
-        "enabled": true,
-        "allowedIps": [
-            "192.168.1.1/24"
-        ],
-        "blockedIps": [
-            "10.192.168.0/24",
-            "192.168.2.0/24",
-            "71.111.123.1/24"
-        ],
-        "maxRequestsPerMinute": 5,
-        "banDuration": 60000
-    },
-    "rateLimiting": {
-        "enabled": true,
-        "maxRequests": 3,
-        "timeWindow": 5000,
-        "banDuration": 60000
-    },
-    "requestBlocking": {
-        "enabled": false,
-        "rules": []
-    },
-    "logging": {
-        "enabled": true,
-        "logLevel": "info",
-        "logToFile": true,
-        "logToConsole": false
-    },
-    "alerting": {
-        "enabled": false,
-        "alertLevel": "low",
-        "email": "",
-        "sms": "",
-        "alertThreshold": 0
-    },
-    "general": {
-        "blockOnBreach": true,
-        "maxRequestSize": 908661,
-        "requestTimeout": 80000
-    }
+  "ipFiltering": {
+    "enabled": true,
+    "allowedIps": [
+      "192.168.1.1/24",
+      "10.0.0.2/8"
+    ],
+    "blockedIps": [
+      "203.0.113.0/24",
+      "198.51.100.1/24",
+      "0.0.0.0/8",
+      "172.0.0.1/8",
+      "192.168.1.105/24"
+    ],
+    "maxRequestsPerMinute": 80,
+    "banDuration": 3600
+  },
+  "rateLimiting": {
+    "enabled": true,
+    "maxRequests": 2,
+    "timeWindow": 2601,
+    "banDuration": 10000
+  },
+  "requestBlocking": {
+    "enabled": true,
+    "rules": [
+      {
+        "name": "Block SQL Injection",
+        "pattern": "(union.*select.*|select.*from.*information_schema.tables)",
+        "action": "block",
+        "method": "POST"
+      },
+      {
+        "name": "Block XSS Attack",
+        "pattern": "<script.*>.*</script>",
+        "action": "block",
+        "method": "GET"
+      }
+    ]
+  },
+  "logging": {
+    "enabled": true,
+    "logLevel": "info",
+    "logToFile": true,
+    "logToConsole": true
+  },
+  "alerting": {
+    "enabled": true,
+    "alertLevel": "high",
+    "email": "tanakah30@gmail.com.com",
+    "sms": "+263778040497",
+    "alertThreshold": 5
+  },
+  "general": {
+    "blockOnBreach": true,
+    "maxRequestSize": 1048576,
+    "requestTimeout": 5000
+  }
 }

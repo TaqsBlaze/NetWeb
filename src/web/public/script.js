@@ -40,7 +40,7 @@ document.getElementById('configForm').addEventListener('submit', async (e) => {
     };
 
     try {
-        const response = await axios.post('/api/config', config);
+        const response = await axios.post('/reqweb/api/config', config);
         alert(response.data.message || 'Configuration saved successfully!');
     } catch (error) {
         console.error('Error saving configuration:', error);
@@ -51,7 +51,7 @@ document.getElementById('configForm').addEventListener('submit', async (e) => {
 // Dynamically fetch and populate form with existing configuration on page load
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await axios.get('/api/config');
+        const response = await axios.get('/reqweb/api/config');
         const config = response.data;
 
         // Populate IP Filtering

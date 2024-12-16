@@ -1,6 +1,6 @@
 {
   "name": "reqweb",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A powerful Web Application Firewall (WAF) for Node.js.",
   "main": "src/index.js",
   "exports": {
@@ -8,7 +8,8 @@
     "./src/middlewares/ipFilter": "./src/middlewares/ipFilter.js",
     "./src/utils/configLoader": "./src/utils/configLoader.js",
     "./src/middlewares/logger": "./src/middlewares/logger.js",
-    "./src/middlewares/rateLimiter": "./src/middlewares/rateLimiter.js"
+    "./src/middlewares/rateLimiter": "./src/middlewares/rateLimiter.js",
+    "./src/middlewares": "./src/middlewares/*"
   },
   "directories": {
     "test": "tests"
