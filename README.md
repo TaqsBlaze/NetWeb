@@ -30,6 +30,8 @@ npm install reqweb
    ```javascript
    
     const express = require('express');
+    const reqweb = require('reqweb');
+    const apiRoutes = require('./web/public/routes/api');
     const ipFilter = require('reqweb/src/middlewares/ipFilter');
     const ruleEngine = require('reqweb/src/middlewares/ruleEngine');
     const logger = require('reqweb/src/middlewares/logger');
@@ -61,14 +63,19 @@ npm install reqweb
    app.use(rateLimiter(config));  // Rate limiting middleware
    app.use(ruleEngine(config));   // Rule-based request blocking
 
+   //adding WAF web interface
+   app.use('/reqweb/api', apiRoutes);
+
    app.get('/', (req, res) => {
        res.send('Welcome to Homelab!');
    });
 
-   app.listen(3000, () => {
-       console.log('Homelab is running on http://localhost:3000');
-   });
+   //running your app with WAF web interface enabled
+   reqweb.startInterface(app, 3000);
    ```
+## Accessing ReqWeb web interface
+with the above setup you will have access to your waf web configuration interface at the following address:
+`http://localhost:3000/reqweb/api/web`
 
 ### Configuration Example
 
