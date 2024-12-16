@@ -20,7 +20,7 @@
   "scripts": {
     "build": "tsc",
     "test": "mocha tests/**/*.js",
-    "run": "bun --watch src/index.js"
+    "serve": "bun --watch src/index.js"
   },
   "keywords": [
     "WAF",
