@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Default configuration path
-const defaultConfigPath = path.join(__dirname, '../config/defaultConfig.json');
+const userConfigPath = path.join(__dirname, '../config/userConfig.json');
 
 /**
  * Loads the configuration file and merges it with default settings.
@@ -13,7 +13,7 @@ function loadConfig() {
 
   try {
     // Attempt to read the config file
-    const rawConfig = fs.readFileSync(defaultConfigPath);
+    const rawConfig = fs.readFileSync(userConfigPath);
     const userConfig = JSON.parse(rawConfig);
 
     // Merge user config with default values
@@ -37,44 +37,13 @@ function loadConfig() {
  * @returns {Object} Default configuration.
  */
 function getDefaultConfig() {
-  return {
-    ipFiltering: {
-      enabled: true,
-      allowedIps: [],
-      blockedIps: [],
-      maxRequestsPerMinute: 100,
-      banDuration: 3600
-    },
-    rateLimiting: {
-      enabled: true,
-      maxRequests: 1000,
-      timeWindow: 3600,
-      banDuration: 86400
-    },
-    requestBlocking: {
-      enabled: true,
-      rules: []
-    },
-    logging: {
-      enabled: true,
-      logLevel: 'info',
-      logFile: 'waf_logs.json',
-      logToFile: true,
-      logToConsole: true
-    },
-    alerting: {
-      enabled: true,
-      alertLevel: 'high',
-      email: 'tanakah30@gmail.com',
-      sms: '+263778040497',
-      alertThreshold: 5
-    },
-    general: {
-      blockOnBreach: true,
-      maxRequestSize: 1048576,
-      requestTimeout: 5000
-    }
-  };
+
+  const defaultConfigPath = path.join(__dirname, '../config/defaultConfig.json');
+  // Attempt to read the config file
+  const rawConfig = fs.readFileSync(defaultConfigPath);
+  const defaultConfig = JSON.parse(rawConfig);
+  
+  return defaultConfig;
 }
 
 /**

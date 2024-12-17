@@ -1,6 +1,6 @@
 {
   "name": "reqweb",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A powerful Web Application Firewall (WAF) for Node.js.",
   "main": "src/index.js",
   "exports": {
@@ -28,6 +28,7 @@
     "Firewall",
     "Node.js",
     "Security",
+    "Express",
     "Access controll"
   ],
   "author": "Tanaka Chinengundu",
